@@ -35,6 +35,7 @@ module.exports = {
       options: {
         spaceId: `kw1nm6fs36fz`,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        host: process.env.CONTENTFUL_HOST,
       },
     },
     {

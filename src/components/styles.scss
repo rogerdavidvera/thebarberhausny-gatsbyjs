@@ -1,0 +1,105 @@
+$barberBlack: #000000e0;
+$grid-xs-min: 480px;
+$grid-sm-min: 848px;
+$grid-md-min: 1048px;
+$grid-lg-min: 1200px;
+
+$max-content-width: 1440px;
+
+@mixin sm-viewport {
+  @media only screen and (min-width: $grid-sm-min) {
+    @content;
+  }
+}
+
+@mixin md-viewport {
+  @media only screen and (min-width: $grid-md-min) {
+    @content;
+  }
+}
+
+@mixin lg-viewport {
+  @media only screen and (min-width: $grid-lg-min) {
+    @content;
+  }
+}
+
+.navWrapper {
+  background-color: $barberBlack;
+}
+
+.navBar {
+  display: flex;
+  max-width: $grid-lg-min + 40px;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.menuLink {
+  a {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    box-shadow: none;
+    padding: 0 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    &:hover {
+      background-color: rgba(142, 142, 142, 0.25);
+    }
+  }
+}
+
+.rootMenuLink {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  box-shadow: none;
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+.tablet {
+  display: none;
+  @include sm-viewport {
+    display: inherit;
+  }
+}
+
+.desktop {
+  display: none;
+  @include md-viewport {
+    display: inherit;
+  }
+}
+
+.showTablet {
+  @include sm-viewport {
+    display: none;
+  }
+}
+
+.dropdownButton {
+  @include md-viewport {
+    display: none;
+  }
+}
+
+.dropdownMenu {
+  background: #000000e0;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: -15px;
+  border: 0;
+}
+
+.dropdownLink {
+  margin-bottom: 0;
+}
+
+.rightSide {
+  position: relative;
+  display: flex;
+  align-items: center;
+}

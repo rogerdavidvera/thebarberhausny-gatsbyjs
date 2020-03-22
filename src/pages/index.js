@@ -1,24 +1,40 @@
 import React from "react"
 // import { Link, graphql } from "gatsby"
-
+import styles from "./styles.scss"
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
 // import SEO from "../components/seo"
 // import { rhythm } from "../utils/typography"
 
 const Homepage = ({ data, location }) => {
+  console.log(data)
+  const imageUrl = data.contentfulAsset.resolutions.srcWebp
+  const srcSet = data.contentfulAsset.resolutions.srcSet.split(",")
+  const bigSize = srcSet[srcSet.length - 1].split(" ")[0]
+  console.log(bigSize)
   return (
     <Layout>
-      <link
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet"
-      ></link>
-      <h1>
-        Welcome to The Barber Haus NY, the best barbershop in town. YEEEEEEEE
-        HAW!
-      </h1>
+      <div className="homePageContainer">
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        ></link>
+        <img className="image" src={bigSize} />
+      </div>
     </Layout>
   )
 }
 
 export default Homepage
+
+export const query = graphql`
+  {
+    __typename
+    contentfulAsset(contentful_id: { eq: "2MNV59Y8qsyjye5tStFxSx" }) {
+      resolutions {
+        srcWebp
+        srcSet
+      }
+    }
+  }
+`

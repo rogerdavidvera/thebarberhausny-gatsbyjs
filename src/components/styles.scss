@@ -24,6 +24,12 @@ $max-content-width: 1440px;
   }
 }
 
+.pageContainer {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 .navWrapper {
   background-color: $barberBlack;
 }
@@ -54,9 +60,18 @@ $max-content-width: 1440px;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   box-shadow: none;
-  font-size: 2.5rem;
+  font-size: 1rem;
   font-weight: 300;
   letter-spacing: 3px;
+  @media only screen and (min-width: 380px) {
+    font-size: 1.5rem;
+  }
+  @media only screen and (min-width: 480px) {
+    font-size: 2rem;
+  }
+  @media only screen and (min-width: 601px) {
+    font-size: 2.5rem;
+  }
 }
 
 .tablet {
@@ -90,8 +105,17 @@ $max-content-width: 1440px;
   display: flex;
   flex-direction: column;
   position: absolute;
-  right: -15px;
+  right: -1rem;
   border: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+.menuIcon {
+  @media only screen and (min-width: 601px) {
+    height: 64px !important;
+    line-height: 64px !important;
+  }
 }
 
 .dropdownLink {
@@ -100,6 +124,12 @@ $max-content-width: 1440px;
 
 .rightSide {
   position: relative;
-  display: flex;
-  align-items: center;
+}
+
+.footerBar {
+  background-color: $barberBlack;
+  padding: 12px 0;
+  font-weight: 300px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
 }

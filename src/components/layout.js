@@ -27,7 +27,7 @@ const NavBar = () => {
           <li className="menuLink tablet">
             <Link to={`/about`}>About Us</Link>
           </li>
-          <li className="menuLink tablet ">
+          <li className="menuLink tablet">
             <Link to={`/`}>Gallery</Link>
           </li>
           <li className="menuLink desktop">
@@ -38,27 +38,29 @@ const NavBar = () => {
           </li>
           <li className="menuLink dropdownButton">
             <a href="#" onClick={() => setShowDropdown(!showDropdown)}>
-              <i class="material-icons">menu</i>
+              <i class="material-icons menuIcon">menu</i>
             </a>
-            {showDropdown && (
-              <ul className="collection dropdownMenu">
-                <li className="menuLink dropdownLink showTablet">
-                  <Link to={`/`}>Barbershop</Link>
-                </li>
-                <li className="menuLink dropdownLink showTablet">
-                  <Link to={`/about`}>About Us</Link>
-                </li>
-                <li className="menuLink dropdownLink showTablet">
-                  <Link to={`/`}>Gallery</Link>
-                </li>
-                <li className="menuLink dropdownLink">
-                  <Link to={`/`}>Testimonial</Link>
-                </li>
-                <li className="menuLink dropdownLink">
-                  <Link to={`/`}>Contact Us</Link>
-                </li>
-              </ul>
-            )}
+            <ul
+              className={`collection dropdownMenu ${
+                showDropdown ? "show" : "hide"
+              }`}
+            >
+              <li className="menuLink dropdownLink showTablet">
+                <Link to={`/`}>Barbershop</Link>
+              </li>
+              <li className="menuLink dropdownLink showTablet">
+                <Link to={`/about`}>About Us</Link>
+              </li>
+              <li className="menuLink dropdownLink showTablet">
+                <Link to={`/`}>Gallery</Link>
+              </li>
+              <li className="menuLink dropdownLink">
+                <Link to={`/`}>Testimonial</Link>
+              </li>
+              <li className="menuLink dropdownLink">
+                <Link to={`/`}>Contact Us</Link>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -70,56 +72,12 @@ const Layout = ({ location, title, children }) => {
   console.log(location)
   // const rootPath = `${__PATH_PREFIX__}/`
   // let header
-  /*
-  if (location.pathname === rootPath) {
-    header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
-    )
-  } else {
-    header = (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h3>
-    )
-  }
-  */
   return (
-    <div>
+    <div class="pageContainer">
       <NavBar />
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, The Barber Haus NY, Poughkeepsie NY
+      <footer className="page-footer footerBar">
+        © {new Date().getFullYear()}, The Barber Haus NY, Poughkeepsie, NY
       </footer>
     </div>
   )

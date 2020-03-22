@@ -24,9 +24,7 @@ const AboutPage = ({ pageContext: { contentful } }) => {
               {subHeading}
             </h5>
           </div>
-          <div class="container">
-            <div className="container center-align"></div>
-
+          <div className="container center-align">
             <Markdown text={text}></Markdown>
           </div>
         </div>

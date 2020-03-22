@@ -43,7 +43,7 @@ const BarbershopPage = ({ pageContext: { contentful } }) => {
             <h2 className="section-title center-align heading">{heading}</h2>
             <div class="divider" />
             <h5 class="section-subtitle light center-align subheading">
-              {console.log(services)}
+              {subHeading}
             </h5>
           </div>
         </div>

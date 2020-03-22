@@ -3,25 +3,26 @@ import React from "react"
 import styles from "./styles.scss"
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
-// import SEO from "../components/seo"
+import SEO from "../components/seo"
 // import { rhythm } from "../utils/typography"
 
 const Homepage = ({ data, location }) => {
-  console.log(data)
   const imageUrl = data.contentfulAsset.resolutions.srcWebp
   const srcSet = data.contentfulAsset.resolutions.srcSet.split(",")
   const bigSize = srcSet[srcSet.length - 1].split(" ")[0]
-  console.log(bigSize)
   return (
-    <Layout>
-      <div className="homePageContainer">
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet"
-        ></link>
-        <img className="image" src={bigSize} />
-      </div>
-    </Layout>
+    <>
+      <SEO title="Welcome" />
+      <Layout>
+        <div className="homePageContainer">
+          <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+          ></link>
+          <img className="image" src={bigSize} />
+        </div>
+      </Layout>
+    </>
   )
 }
 

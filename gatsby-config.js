@@ -10,6 +10,7 @@ module.exports = {
       summary: `Software engineer from Jersey, working in the Big Apple`,
     },
     description: `The official website of The Barber Haus NY`,
+    image: "content/assets/logo.png",
     siteUrl: `https://thebarberhausny.netlify.com`,
     social: {
       twitter: `roger_vera_`,

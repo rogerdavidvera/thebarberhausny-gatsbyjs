@@ -67,6 +67,18 @@ const getGalleryPage = graphql => {
     `
   )
 }
+const getReviewsPage = graphql => {
+  return graphql(
+    `
+      {
+        contentfulReviewsPage {
+          heading
+          subHeading
+        }
+      }
+    `
+  )
+}
 
 const createAboutPage = async (graphql, actions) => {
   const { createPage } = actions
@@ -118,7 +130,24 @@ const createGalleryPage = async (graphql, actions) => {
   })
 }
 
+const createReviewsPage = async (graphql, actions) => {
+  const { createPage } = actions
+
+  const reviewsTemplate = path.resolve(`./src/templates/Reviews/index.jsx`)
+
+  const graphQLResponse = await getReviewsPage(graphql)
+
+  createPage({
+    path: "/reviews",
+    component: slash(reviewsTemplate),
+    context: {
+      contentful: graphQLResponse.data.contentfulReviewsPage,
+    },
+  })
+}
+
 exports.createPages = ({ graphql, actions }) => {
+  createReviewsPage(graphql, actions)
   createGalleryPage(graphql, actions)
   createBarbershopPage(graphql, actions)
   return createAboutPage(graphql, actions)

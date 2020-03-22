@@ -79,6 +79,34 @@ const getReviewsPage = graphql => {
     `
   )
 }
+const getContactPage = graphql => {
+  return graphql(
+    `
+      {
+        contentfulContactPage {
+          heading
+          subHeading
+          description
+          address
+          hours
+          phoneNumber
+          facebookUrl
+          instagramHandle
+          instagramLogo {
+            resolutions {
+              src
+            }
+          }
+          facebookLogo {
+            resolutions {
+              src
+            }
+          }
+        }
+      }
+    `
+  )
+}
 
 const createAboutPage = async (graphql, actions) => {
   const { createPage } = actions
@@ -146,7 +174,24 @@ const createReviewsPage = async (graphql, actions) => {
   })
 }
 
+const createContactPage = async (graphql, actions) => {
+  const { createPage } = actions
+
+  const contactTemplate = path.resolve(`./src/templates/Contact/index.jsx`)
+
+  const graphQLResponse = await getContactPage(graphql)
+
+  createPage({
+    path: "/contact",
+    component: slash(contactTemplate),
+    context: {
+      contentful: graphQLResponse.data.contentfulContactPage,
+    },
+  })
+}
+
 exports.createPages = ({ graphql, actions }) => {
+  createContactPage(graphql, actions)
   createReviewsPage(graphql, actions)
   createGalleryPage(graphql, actions)
   createBarbershopPage(graphql, actions)

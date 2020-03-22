@@ -25,7 +25,7 @@ const NavBar = () => {
             <Link to={`/reviews`}>Reviews</Link>
           </li>
           <li className="menuLink desktop">
-            <Link to={`/`}>Contact Us</Link>
+            <Link to={`/contact`}>Contact Us</Link>
           </li>
           <li className="menuLink dropdownButton">
             <a href="#" onClick={() => setShowDropdown(!showDropdown)}>

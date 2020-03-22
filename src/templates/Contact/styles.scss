@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Libel Suit";
+  src: url("../../../content/fonts/libelsuit.ttf") format("truetype");
+}
+.textContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.heading {
+  font-family: "Libel Suit", sans-serif;
+  text-transform: uppercase;
+}
+
+.subheading {
+  font-family: "Roboto";
+  padding-bottom: 2.5rem;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+.contactDescription {
+  font-family: "Roboto";
+  text-decoration: underline;
+}
+
+.contactSectionHeading {
+  font-family: "Roboto";
+  font-size: 1.25rem;
+}
+
+.contactSectionText {
+  font-family: "Roboto";
+}
+
+.phoneNumber {
+  margin-bottom: 1rem;
+}
+
+.socialMediaContainer {
+  box-shadow: none;
+}
+
+.socialMediaIcon {
+  width: 50px;
+  margin: 0;
+}
+
+.socialMediaLabel {
+  display: inline;
+  margin-left: 0.5rem;
+}

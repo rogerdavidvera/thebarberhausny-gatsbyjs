@@ -86,7 +86,7 @@ $max-content-width: 1440px;
 }
 
 .dropdownMenu {
-  background: #000000e0;
+  background: $barberBlack;
   display: flex;
   flex-direction: column;
   position: absolute;

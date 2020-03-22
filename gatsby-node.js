@@ -1,64 +1,40 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const slash = require("slash")
+const path = require("path")
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const result = await graphql(
+const getAboutPage = graphql => {
+  return graphql(
     `
       {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
-            }
+        contentfulAboutPage {
+          pageHeading
+          subHeading {
+            subHeading
+          }
+          text {
+            text
           }
         }
       }
     `
   )
+}
 
-  if (result.errors) {
-    throw result.errors
-  }
+const createAboutPage = async (graphql, actions) => {
+  const { createPage } = actions
 
-  // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges
+  const aboutTemplate = path.resolve(`./src/templates/About/index.jsx`)
 
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
+  const graphQLResponse = await getAboutPage(graphql)
 
-    createPage({
-      path: post.node.fields.slug,
-      component: blogPost,
-      context: {
-        slug: post.node.fields.slug,
-        previous,
-        next,
-      },
-    })
+  createPage({
+    path: "/about",
+    component: slash(aboutTemplate),
+    context: {
+      contentful: graphQLResponse.data.contentfulAboutPage,
+    },
   })
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
+exports.createPages = ({ graphql, actions }) => {
+  return createAboutPage(graphql, actions)
 }

@@ -43,6 +43,30 @@ const getBarbershopPage = graphql => {
     `
   )
 }
+const getGalleryPage = graphql => {
+  return graphql(
+    `
+      {
+        contentfulGalleryPage {
+          heading
+          subHeading
+          gallery {
+            id
+            resolutions {
+              src
+            }
+          }
+          slideshow {
+            id
+            resolutions {
+              src
+            }
+          }
+        }
+      }
+    `
+  )
+}
 
 const createAboutPage = async (graphql, actions) => {
   const { createPage } = actions
@@ -78,7 +102,24 @@ const createBarbershopPage = async (graphql, actions) => {
   })
 }
 
+const createGalleryPage = async (graphql, actions) => {
+  const { createPage } = actions
+
+  const galleryTemplate = path.resolve(`./src/templates/Gallery/index.jsx`)
+
+  const graphQLResponse = await getGalleryPage(graphql)
+
+  createPage({
+    path: "/gallery",
+    component: slash(galleryTemplate),
+    context: {
+      contentful: graphQLResponse.data.contentfulGalleryPage,
+    },
+  })
+}
+
 exports.createPages = ({ graphql, actions }) => {
+  createGalleryPage(graphql, actions)
   createBarbershopPage(graphql, actions)
   return createAboutPage(graphql, actions)
 }

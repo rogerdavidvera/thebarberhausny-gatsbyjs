@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import "./styles.scss"
-import Markdown from "@codecademy/gamut/dist/Markdown"
 
 const createCards = ({
   name,

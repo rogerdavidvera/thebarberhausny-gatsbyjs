@@ -1,13 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
-import styles from "./styles.scss"
-// import Bio from "../components/bio"
+import "./styles.scss"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-// import { rhythm } from "../utils/typography"
 
 const Homepage = ({ data, location }) => {
-  const imageUrl = data.contentfulAsset.resolutions.srcWebp
   const srcSet = data.contentfulAsset.resolutions.srcSet.split(",")
   const bigSize = srcSet[srcSet.length - 1].split(" ")[0]
   return (

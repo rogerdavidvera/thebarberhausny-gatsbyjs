@@ -1,15 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import "./styles.scss"
-// import { rhythm, scale } from "../utils/typography"
-
-const MENU_ITEMS = [
-  { item: "Barbershop", link: "/barbershop" },
-  { item: "About Us", link: "/about" },
-  { item: "Gallery", link: "/gallery" },
-  { item: "Reviews", link: "/testimonials" },
-  { item: "Contact", link: "/contact" },
-]
 
 const NavBar = () => {
   const [showDropdown, setShowDropdown] = useState(false)
@@ -28,10 +19,10 @@ const NavBar = () => {
             <Link to={`/about`}>About Us</Link>
           </li>
           <li className="menuLink tablet">
-            <Link to={`/`}>Gallery</Link>
+            <Link to={`/gallery`}>Gallery</Link>
           </li>
           <li className="menuLink desktop">
-            <Link to={`/`}>Testimonial</Link>
+            <Link to={`/reviews`}>Reviews</Link>
           </li>
           <li className="menuLink desktop">
             <Link to={`/`}>Contact Us</Link>
@@ -52,13 +43,13 @@ const NavBar = () => {
                 <Link to={`/about`}>About Us</Link>
               </li>
               <li className="menuLink dropdownLink showTablet">
-                <Link to={`/`}>Gallery</Link>
+                <Link to={`/gallery`}>Gallery</Link>
               </li>
               <li className="menuLink dropdownLink">
-                <Link to={`/`}>Testimonial</Link>
+                <Link to={`/reviews`}>Reviews</Link>
               </li>
               <li className="menuLink dropdownLink">
-                <Link to={`/`}>Contact Us</Link>
+                <Link to={`/contact`}>Contact Us</Link>
               </li>
             </ul>
           </li>

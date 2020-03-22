@@ -1,5 +1,5 @@
 import React from "react"
-// import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import styles from "./styles.scss"
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -15,10 +15,6 @@ const Homepage = ({ data, location }) => {
       <SEO title="Welcome" />
       <Layout>
         <div className="homePageContainer">
-          <link
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
-            rel="stylesheet"
-          ></link>
           <img className="image" src={bigSize} />
         </div>
       </Layout>

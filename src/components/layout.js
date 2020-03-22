@@ -69,11 +69,14 @@ const NavBar = () => {
 }
 
 const Layout = ({ location, title, children }) => {
-  console.log(location)
   // const rootPath = `${__PATH_PREFIX__}/`
   // let header
   return (
     <div class="pageContainer">
+      <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+      ></link>
       <NavBar />
       <main>{children}</main>
       <footer className="page-footer footerBar">

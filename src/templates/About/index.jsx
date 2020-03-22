@@ -1,4 +1,6 @@
 import React from "react"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 
 const AboutPage = ({ pageContext: { contentful } }) => {
   const {
@@ -8,9 +10,12 @@ const AboutPage = ({ pageContext: { contentful } }) => {
   } = contentful
   return (
     <>
-      <h1>{pageHeading}</h1>
-      <h2>{subHeading}</h2>
-      <p>{text}</p>
+      <SEO title={pageHeading} description={subHeading} />
+      <Layout>
+        <h1>{pageHeading}</h1>
+        <h2>{subHeading}</h2>
+        <p>{text}</p>
+      </Layout>
     </>
   )
 }

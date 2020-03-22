@@ -18,6 +18,31 @@ const getAboutPage = graphql => {
     `
   )
 }
+const getBarbershopPage = graphql => {
+  return graphql(
+    `
+      {
+        contentfulBarbershopPage {
+          heading
+          subHeading {
+            subHeading
+          }
+          services {
+            name
+            description
+            disclaimer
+            image {
+              id
+              resolutions {
+                src
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+}
 
 const createAboutPage = async (graphql, actions) => {
   const { createPage } = actions
@@ -35,6 +60,25 @@ const createAboutPage = async (graphql, actions) => {
   })
 }
 
+const createBarbershopPage = async (graphql, actions) => {
+  const { createPage } = actions
+
+  const barbershopTemplate = path.resolve(
+    `./src/templates/Barbershop/index.jsx`
+  )
+
+  const graphQLResponse = await getBarbershopPage(graphql)
+
+  createPage({
+    path: "/barbershop",
+    component: slash(barbershopTemplate),
+    context: {
+      contentful: graphQLResponse.data.contentfulBarbershopPage,
+    },
+  })
+}
+
 exports.createPages = ({ graphql, actions }) => {
+  createBarbershopPage(graphql, actions)
   return createAboutPage(graphql, actions)
 }

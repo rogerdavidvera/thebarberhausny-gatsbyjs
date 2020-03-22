@@ -22,7 +22,7 @@ const NavBar = () => {
         </Link>
         <ul className="nav-mobile right rightSide">
           <li className="menuLink tablet">
-            <Link to={`/`}>Barbershop</Link>
+            <Link to={`/barbershop`}>Barbershop</Link>
           </li>
           <li className="menuLink tablet">
             <Link to={`/about`}>About Us</Link>
@@ -46,7 +46,7 @@ const NavBar = () => {
               }`}
             >
               <li className="menuLink dropdownLink showTablet">
-                <Link to={`/`}>Barbershop</Link>
+                <Link to={`/barbershop`}>Barbershop</Link>
               </li>
               <li className="menuLink dropdownLink showTablet">
                 <Link to={`/about`}>About Us</Link>

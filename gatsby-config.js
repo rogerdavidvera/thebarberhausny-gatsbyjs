@@ -4,15 +4,15 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `The Barber Haus NY`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Roger Vera`,
+      summary: `Software engineer from Jersey, working in the Big Apple`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `The official website of The Barber Haus NY`,
+    siteUrl: `https://thebarberhausny.netlify.com`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `roger_vera_`,
     },
   },
   plugins: [
@@ -61,7 +61,6 @@ module.exports = {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

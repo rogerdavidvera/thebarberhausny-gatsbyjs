@@ -1,17 +1,16 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "the-barber-haus-ny",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "The official website of The Barber Haus NY",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Roger Vera <rogerdavidvera@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "email": "thebarberhauswebdev@gmail.com"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
     "gatsby": "^2.19.49",
     "gatsby-image": "^2.2.44",
-    "gatsby-plugin-feed": "^2.3.29",
     "gatsby-plugin-google-analytics": "^2.1.38",
     "gatsby-plugin-manifest": "^2.2.48",
     "gatsby-plugin-offline": "^3.0.41",

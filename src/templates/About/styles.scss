@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Libel Suit";
+  src: url("../../../content/fonts/libelsuit.ttf") format("truetype");
+}
+.textContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.heading {
+  font-family: "Libel Suit", sans-serif;
+  text-transform: uppercase;
+}
+
+.subheading {
+  font-family: "Roboto";
+  padding-bottom: 2.5rem;
+}

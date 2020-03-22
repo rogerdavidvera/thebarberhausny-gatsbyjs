@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
+import "./styles.scss"
 
 const AboutPage = ({ pageContext: { contentful } }) => {
   const {
@@ -12,9 +13,20 @@ const AboutPage = ({ pageContext: { contentful } }) => {
     <>
       <SEO title={pageHeading} description={subHeading} />
       <Layout>
-        <h1>{pageHeading}</h1>
-        <h2>{subHeading}</h2>
-        <p>{text}</p>
+        <div className="textContainer">
+          <div className="container">
+            <h2 className="section-title center-align heading">
+              {pageHeading}
+            </h2>
+            <div class="divider" />
+            <h5 class="section-subtitle light center-align subheading">
+              {subHeading}
+            </h5>
+          </div>
+          <div className="container">
+            <p>{text}</p>
+          </div>
+        </div>
       </Layout>
     </>
   )

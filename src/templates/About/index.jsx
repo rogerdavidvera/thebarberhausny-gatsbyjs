@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import "./styles.scss"
+import Markdown from "@codecademy/gamut/dist/Markdown"
 
 const AboutPage = ({ pageContext: { contentful } }) => {
   const {
@@ -23,8 +24,8 @@ const AboutPage = ({ pageContext: { contentful } }) => {
               {subHeading}
             </h5>
           </div>
-          <div className="container">
-            <p>{text}</p>
+          <div className="container center-align">
+            <Markdown text={text}></Markdown>
           </div>
         </div>
       </Layout>

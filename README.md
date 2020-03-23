@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  A full service, friendly neighborhood barbershop specializing in all types of hair, located in the Arlington section of Poughkeepsie, NY.
+  The Barber Haus NY
 </h1>
 
 

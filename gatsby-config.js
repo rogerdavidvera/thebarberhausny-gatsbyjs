@@ -9,7 +9,7 @@ module.exports = {
       name: `Roger Vera`,
       summary: `Software engineer from Jersey, working in the Big Apple`,
     },
-    description: `The official website of The Barber Haus NY`,
+    description: `A full service, friendly neighborhood barbershop, specializing in all types of hair, located in the Arlington section of Poughkeepsie, NY.`,
     image: "content/assets/logo.png",
     siteUrl: `https://thebarberhausny.netlify.com`,
     social: {

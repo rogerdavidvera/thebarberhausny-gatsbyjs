@@ -24,15 +24,16 @@ const SitewideBanner = () => {
     `
   )
 
+  let showModal = showBanner
+
   useEffect(() => {
     const elems = document.querySelectorAll(".modal")
     const modal = M.Modal.init(elems)[0]
+    showModal = sessionStorage.getItem("showModal")
     if (modal) {
       modal.open()
     }
   }, [])
-
-  const showModal = sessionStorage.getItem("showModal")
 
   if (showBanner && !!showModal) {
     return (

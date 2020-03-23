@@ -197,3 +197,18 @@ exports.createPages = ({ graphql, actions }) => {
   createBarbershopPage(graphql, actions)
   return createAboutPage(graphql, actions)
 }
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /materialize-css/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}

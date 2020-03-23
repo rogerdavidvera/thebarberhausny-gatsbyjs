@@ -6,7 +6,7 @@ import React from "react"
 
 const NotFoundPage = ({ data, location }) => {
   // const siteTitle = data.site.siteMetadata.title
-  return <h1>404</h1>
+  return <h1>Lost?</h1>
 }
 
 export default NotFoundPage

@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import "./styles.scss"
+import SidewideBanner from "./sitewideBanner"
 
 const NavBar = () => {
   const [showDropdown, setShowDropdown] = useState(false)
@@ -64,6 +65,7 @@ const Layout = ({ location, title, children }) => {
   // let header
   return (
     <div class="pageContainer">
+      <SidewideBanner />
       <link
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet"

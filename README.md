@@ -1,10 +1,15 @@
 <p align="center">
   <a href="https://www.thebarberhausny.com">
-    <img alt="Logo" src="https://instagram.fewr1-1.fna.fbcdn.net/v/t51.2885-19/s150x150/26866935_1780089948676710_1085547890232786944_n.jpg?_nc_ht=instagram.fewr1-1.fna.fbcdn.net&_nc_ohc=Sd1Htvu6-cEAX-7ndDl&oh=cedc53cb530b5e1fa0176a016e06bff5&oe=5EA3D9E1" width="60" />
+    <img alt="Logo" src="https://scontent.fewr1-6.fna.fbcdn.net/v/t1.0-9/p960x960/78174041_1016162742055811_4435393609679765504_o.jpg?_nc_cat=103&_nc_sid=85a577&_nc_oc=AQnRHgQG0Mxw6vkbBY4z6Twk9NQa7-Y2QqqoZRKHlsXBwhcBpxLwU3ytbO-knCRooKo&_nc_ht=scontent.fewr1-6.fna&_nc_tp=6&oh=b711cf806cf854e154ab884a80e36321&oe=5E9E120D" width="240"/>
   </a>
 </p>
 <h1 align="center">
   The Barber Haus NY
 </h1>
+
+<p align="center">
+  Built with Gatsby, using Contentful, hosted on Netlify. This repo houses the official website for the Poughkeepsie-based barbershop.
+<p>
+
 
 
